@@ -12,5 +12,4 @@ An iOS customizable ScrollIndicator
 
 ### Customization with IB
 ![Image](DemoResources/customization1.png)
-or
 ![Image](DemoResources/customization2.png)
