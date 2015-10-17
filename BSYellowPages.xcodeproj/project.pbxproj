@@ -353,6 +353,7 @@
 				06866E5B1BD22A4800E8AFDB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
