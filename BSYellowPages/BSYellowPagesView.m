@@ -9,109 +9,98 @@
 #import "BSYellowPagesView.h"
 #import "UIView+RoundView.h"
 
-static CGFloat const kDefaultPageWidth = 12.f;
-static CGFloat const kDefaultPageHeight = 12.f;
-static CGFloat const kDefaultYellowPageWidth = 6.f;
-static CGFloat const kDefaultYellowPageHeight = 6.f;
-static CGFloat const kDefaultWidthBetweenPages = 10.f;
+static CGFloat const kDefaultPageWidth = 12.;
+static CGFloat const kDefaultPageHeight = 12.;
+static CGFloat const kDefaultYellowPageWidth = 6.;
+static CGFloat const kDefaultYellowPageHeight = 6.;
+static CGFloat const kDefaultWidthBetweenPages = 10.;
 
 @interface BSYellowPagesView ()
 
-@property (nonatomic) UIScrollView *scrollView;
-
-@property (nonatomic) NSMutableArray *pages;
-@property (nonatomic) NSMutableArray *yellowPages;
+@property (strong, nonatomic) UIScrollView *scrollView;
+@property (strong, nonatomic) NSMutableArray *pages;
+@property (strong, nonatomic) NSMutableArray *yellowPages;
 
 @end
 
 @implementation BSYellowPagesView
 
-#pragma mark - Accessors -
+#pragma mark - Life cycle -
 
-- (void)awakeFromNib
-{
+- (void)awakeFromNib {
     [super awakeFromNib];
     
-    if (!self.pageWidth) {
-        self.pageWidth = kDefaultPageWidth;
+    if (!_pageWidth) {
+        _pageWidth = kDefaultPageWidth;
     }
     
-    if (!self.pageHeight) {
-        self.pageHeight = kDefaultPageHeight;
+    if (!_pageHeight) {
+        _pageHeight = kDefaultPageHeight;
     }
     
-    if (!self.yellowPageWidth) {
-        self.yellowPageWidth = kDefaultYellowPageWidth;
+    if (!_yellowPageWidth) {
+        _yellowPageWidth = kDefaultYellowPageWidth;
     }
     
-    if (!self.yellowPageHeight) {
-        self.yellowPageHeight = kDefaultYellowPageHeight;
+    if (!_yellowPageHeight) {
+        _yellowPageHeight = kDefaultYellowPageHeight;
     }
     
-    if (!self.widthBetweenPages) {
-        self.widthBetweenPages = kDefaultWidthBetweenPages;
+    if (!_widthBetweenPages) {
+        _widthBetweenPages = kDefaultWidthBetweenPages;
     }
     
-    if (!self.outherColor) {
-        self.outherColor = [UIColor colorWithRed:0.898 green:0.898 blue:0.898 alpha:1.0];
+    if (!_outherColor) {
+        _outherColor = [UIColor colorWithRed:0.898 green:0.898 blue:0.898 alpha:1.0];
     }
     
-    if (!self.innerColor) {
-        self.innerColor = [UIColor colorWithRed:0.9725 green:0.7059 blue:0.0 alpha:1.0];
+    if (!_innerColor) {
+        _innerColor = [UIColor colorWithRed:0.9725 green:0.7059 blue:0.0 alpha:1.0];
     }
 }
-
-#pragma mark - Life cycle -
 
 #pragma mark - UIScrollViewDelegate -
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [self configureForOffsetX:scrollView.contentOffset.x];
 }
 
-#pragma mark - Actions -
-
 #pragma mark - Public methods -
 
-- (void)createYellowPagesWithScrollView:(UIScrollView *)scrollView
-{
-    _scrollView = scrollView;
+- (void)createYellowPagesWithScrollView:(UIScrollView *)scrollView {
+    self.scrollView = scrollView;
     [self configure];
 }
 
 #pragma mark - Privat methods -
 
-- (void)configureForOffsetX:(CGFloat)offsetX
-{
+- (void)configureForOffsetX:(CGFloat)offsetX {
     CGFloat factorAllViews = self.scrollView.contentSize.width / (CGFloat)[self pagesWidth];
     CGFloat factorBetweenViews = self.scrollView.contentSize.width / self.widthBetweenPages;
     
     CGFloat newX = offsetX / factorAllViews + offsetX / factorBetweenViews;
     
-    for (NSInteger i=0; i < self.yellowPages.count; i++) {
+    for (NSInteger i = 0; i < self.yellowPages.count; i++) {
         UIView *yellowView = self.yellowPages[i];
         
         CGRect frame = yellowView.frame;
-        frame.origin.x = newX - (self.pageWidth + self.widthBetweenPages) * (CGFloat)i - (self.yellowPageWidth-self.pageWidth) / 2.f;
+        frame.origin.x = newX - (self.pageWidth + self.widthBetweenPages) * (CGFloat)i - (self.yellowPageWidth-self.pageWidth) / 2.;
         yellowView.frame = frame;
     }
 }
 
-- (void)configure
-{
+- (void)configure {
     self.scrollView.delegate = self;
     [self createPages];
-    [self configureForOffsetX:0.f];
+    [self configureForOffsetX:0.];
 }
 
-- (void)createPages
-{
+- (void)createPages {
     self.pages = [NSMutableArray array];
     self.yellowPages = [NSMutableArray array];
     
-    CGFloat firstViewX = CGRectGetWidth(self.frame) / 2.f - [self pagesWidth] / 2.f;
-    CGFloat y = CGRectGetHeight(self.frame) / 2.f - self.pageHeight / 2.f;
+    CGFloat firstViewX = CGRectGetWidth(self.frame) / 2. - [self pagesWidth] / 2.;
+    CGFloat y = CGRectGetHeight(self.frame) / 2. - self.pageHeight / 2.;
     
     for (NSInteger i=0; i < [self numberOfPages]; i++) {
         CGFloat x = firstViewX + (self.pageWidth + self.widthBetweenPages) * (CGFloat)i;
@@ -125,8 +114,8 @@ static CGFloat const kDefaultWidthBetweenPages = 10.f;
         [self.pages addObject:view];
         
         // yellow view
-        CGFloat yellowPageX = -(self.yellowPageWidth - self.pageWidth) / 2.f;
-        CGFloat yellowPageY = -(self.yellowPageHeight - self.pageHeight) / 2.f;
+        CGFloat yellowPageX = -(self.yellowPageWidth - self.pageWidth) / 2.;
+        CGFloat yellowPageY = -(self.yellowPageHeight - self.pageHeight) / 2.;
         UIView *yellowView = [[UIView alloc] initWithFrame:CGRectMake(yellowPageX, yellowPageY, self.yellowPageWidth, self.yellowPageHeight)];
         yellowView.backgroundColor = self.innerColor;
         [yellowView roundView];
@@ -135,15 +124,13 @@ static CGFloat const kDefaultWidthBetweenPages = 10.f;
     }
 }
 
-- (NSInteger)numberOfPages
-{
+- (NSInteger)numberOfPages {
     CGFloat width = CGRectGetWidth(self.scrollView.frame);
     
     return self.scrollView.contentSize.width / width;
 }
 
-- (CGFloat)pagesWidth
-{
+- (CGFloat)pagesWidth {
     CGFloat pagesCount = [self numberOfPages];
     return pagesCount * self.pageWidth + (pagesCount - 1) * self.widthBetweenPages;
 }
