@@ -13,8 +13,7 @@
 		06866E501BD22A4800E8AFDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06866E4E1BD22A4800E8AFDB /* Main.storyboard */; };
 		06866E521BD22A4800E8AFDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06866E511BD22A4800E8AFDB /* Assets.xcassets */; };
 		06866E551BD22A4800E8AFDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06866E531BD22A4800E8AFDB /* LaunchScreen.storyboard */; };
-		069630441F16AE47000F8A7E /* BSYellowPagesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 069630411F16AE47000F8A7E /* BSYellowPagesView.m */; };
-		069630451F16AE47000F8A7E /* UIView+RoundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 069630431F16AE47000F8A7E /* UIView+RoundView.m */; };
+		57D285DFC37E52407B6A1D0E /* libPods-BSYellowPages.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C8FA52A4B44388D2774822 /* libPods-BSYellowPages.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,10 +27,9 @@
 		06866E511BD22A4800E8AFDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06866E541BD22A4800E8AFDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06866E561BD22A4800E8AFDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		069630401F16AE47000F8A7E /* BSYellowPagesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSYellowPagesView.h; sourceTree = "<group>"; };
-		069630411F16AE47000F8A7E /* BSYellowPagesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSYellowPagesView.m; sourceTree = "<group>"; };
-		069630421F16AE47000F8A7E /* UIView+RoundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RoundView.h"; sourceTree = "<group>"; };
-		069630431F16AE47000F8A7E /* UIView+RoundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RoundView.m"; sourceTree = "<group>"; };
+		23898A049B06810E9B7786EF /* Pods-BSYellowPages.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSYellowPages.release.xcconfig"; path = "Pods/Target Support Files/Pods-BSYellowPages/Pods-BSYellowPages.release.xcconfig"; sourceTree = "<group>"; };
+		656BC413E5AB3830F354F239 /* Pods-BSYellowPages.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSYellowPages.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BSYellowPages/Pods-BSYellowPages.debug.xcconfig"; sourceTree = "<group>"; };
+		A1C8FA52A4B44388D2774822 /* libPods-BSYellowPages.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BSYellowPages.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57D285DFC37E52407B6A1D0E /* libPods-BSYellowPages.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +49,8 @@
 			children = (
 				06866E441BD22A4800E8AFDB /* BSYellowPages */,
 				06866E431BD22A4800E8AFDB /* Products */,
+				C9262BEC7F9A0CCBE1035DA6 /* Pods */,
+				8D6DB2A107C423B36AD1DBD6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,7 +65,6 @@
 		06866E441BD22A4800E8AFDB /* BSYellowPages */ = {
 			isa = PBXGroup;
 			children = (
-				0696303F1F16AE47000F8A7E /* BSYellowPages */,
 				06866E5F1BD240AC00E8AFDB /* UI */,
 				06866E5C1BD2408B00E8AFDB /* Controller */,
 				06866E5D1BD2409300E8AFDB /* Model */,
@@ -110,16 +110,21 @@
 			name = UI;
 			sourceTree = "<group>";
 		};
-		0696303F1F16AE47000F8A7E /* BSYellowPages */ = {
+		8D6DB2A107C423B36AD1DBD6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				069630401F16AE47000F8A7E /* BSYellowPagesView.h */,
-				069630411F16AE47000F8A7E /* BSYellowPagesView.m */,
-				069630421F16AE47000F8A7E /* UIView+RoundView.h */,
-				069630431F16AE47000F8A7E /* UIView+RoundView.m */,
+				A1C8FA52A4B44388D2774822 /* libPods-BSYellowPages.a */,
 			);
-			name = BSYellowPages;
-			path = ../../BSYellowPages;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C9262BEC7F9A0CCBE1035DA6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				656BC413E5AB3830F354F239 /* Pods-BSYellowPages.debug.xcconfig */,
+				23898A049B06810E9B7786EF /* Pods-BSYellowPages.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,9 +134,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06866E591BD22A4800E8AFDB /* Build configuration list for PBXNativeTarget "BSYellowPages" */;
 			buildPhases = (
+				A85E33EB4ACCA55C14EA0DFB /* [CP] Check Pods Manifest.lock */,
 				06866E3E1BD22A4800E8AFDB /* Sources */,
 				06866E3F1BD22A4800E8AFDB /* Frameworks */,
 				06866E401BD22A4800E8AFDB /* Resources */,
+				2CB09FFA852827A644790D4B /* [CP] Embed Pods Frameworks */,
+				C48BD97F915D110270A5EEAD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -188,6 +196,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2CB09FFA852827A644790D4B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BSYellowPages/Pods-BSYellowPages-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A85E33EB4ACCA55C14EA0DFB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C48BD97F915D110270A5EEAD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BSYellowPages/Pods-BSYellowPages-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		06866E3E1BD22A4800E8AFDB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -195,9 +251,7 @@
 			files = (
 				06866E4D1BD22A4800E8AFDB /* BSViewController.m in Sources */,
 				06866E4A1BD22A4800E8AFDB /* AppDelegate.m in Sources */,
-				069630441F16AE47000F8A7E /* BSYellowPagesView.m in Sources */,
 				06866E471BD22A4800E8AFDB /* main.m in Sources */,
-				069630451F16AE47000F8A7E /* UIView+RoundView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +363,7 @@
 		};
 		06866E5A1BD22A4800E8AFDB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 656BC413E5AB3830F354F239 /* Pods-BSYellowPages.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -322,6 +377,7 @@
 		};
 		06866E5B1BD22A4800E8AFDB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23898A049B06810E9B7786EF /* Pods-BSYellowPages.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
